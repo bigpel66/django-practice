@@ -1,5 +1,5 @@
-from .models import Post
-from .serializer import PostSerializer
+from post.models import Post
+from post.serializer import PostSerializer
 from rest_framework import viewsets
 
 class PostViewSet(viewsets.ModelViewSet):
