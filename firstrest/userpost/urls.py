@@ -3,8 +3,8 @@ from django.urls import include, path
 from userpost import views
 
 router = DefaultRouter()
-router.register('userpost', views.UserPostViewSet)
+router.register('', views.UserPostViewSet)
 
 urlpatterns = [
     path('', include(router.urls))
-]
+] 
