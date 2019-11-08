@@ -20,5 +20,6 @@ import post.urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('post/', include('post.urls')),
-    path('userpost/', include('userpost.urls'))
+    path('userpost/', include('userpost.urls')),
+    path('api-auth/', include('rest_framework.urls'))
 ]
