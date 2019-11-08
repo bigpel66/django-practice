@@ -6,8 +6,8 @@ from rest_framework.authentication import SessionAuthentication, BasicAuthentica
 from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly, IsAdminUser
 
 class UserPostViewSet(viewsets.ModelViewSet):
-    authentication_classes = [TokenAuthentication, SessionAuthentication]
-    permission_classes = [IsAdminUser]
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = UserPost.objects.all()
     serializer_class = UserPostSerializer
 
@@ -22,7 +22,7 @@ class UserPostViewSet(viewsets.ModelViewSet):
         # qs = qs.exclude(author__id = 1
 
         # logged in user filtering
-        # qs = qs.filter(author=self.request.user)
+        # qs = qs.filter(author=self.request.user) 
 
         # if logged in user filtering, else empty filtering
         if self.request.user.is_authenticated:
