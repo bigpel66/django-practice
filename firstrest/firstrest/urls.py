@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from post import urls
+from post  import urls
 from userpost import urls
 from rest_framework import urls
 from rest_framework.authtoken.views import obtain_auth_token
