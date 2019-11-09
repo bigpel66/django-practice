@@ -4,7 +4,9 @@ from mystorage import views
 
 router = DefaultRouter()
 router.register('essay', views.PostViewSet) 
+router.register('album', views.AlbumViewSet)
+router.register('files', views.FilesViewSet)
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
 ]
